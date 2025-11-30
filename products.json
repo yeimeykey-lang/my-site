@@ -1,12 +1,34 @@
 [
-    {"name": "Продукт 1"},
-    {"name": "Продукт 2"},
-    {"name": "Продукт 3"},
-    {"name": "Продукт 4"},
-    {"name": "Продукт 5"},
-    {"name": "Продукт 6"},
-    {"name": "Продукт 7"},
-    {"name": "Продукт 8"},
-    {"name": "Продукт 9"},
-    {"name": "Продукт 10"}
+  {
+    "id": 1,
+    "name": "Зимняя куртка мужская",
+    "price_kg": 25.50,
+    "unit": "шт",
+    "image_url": "images/coat.jpg",
+    "description": "Информация о продукте..."
+  },
+  {
+    "id": 2,
+    "name": "Кофе в зёрнах 1 кг",
+    "price_kg": 12.99,
+    "unit": "кг",
+    "image_url": "images/coffee.jpg",
+    "description": "Информация о продукте..."
+  },
+  {
+    "id": 3,
+    "name": "Футболка белая",
+    "price_kg": 7.50,
+    "unit": "шт",
+    "image_url": "images/tshirt.jpg",
+    "description": "Информация о продукте..."
+  },
+  {
+    "id": 4,
+    "name": "Кроссовки",
+    "price_kg": 45.00,
+    "unit": "пара",
+    "image_url": "images/shoes.jpg",
+    "description": "Информация о продукте..."
+  }
 ]
