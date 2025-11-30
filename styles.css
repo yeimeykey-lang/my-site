@@ -1,260 +1,71 @@
-/* Общие стили */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // ----------------------------------------------------
+    // Логика для Секции 1: Синхронизация выбора страны
+    // ----------------------------------------------------
+    const desktopRadios = document.querySelectorAll('input[name="country_desktop"]');
+    const mobileRadios = document.querySelectorAll('input[name="country_mobile"]');
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section-padding {
-    padding: 40px 0;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 40px 0;
-}
-
-/* --- Секция 1 & 2: Адаптивные контейнеры --- */
-.country-wrapper, .form-wrapper {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    flex-wrap: wrap; /* Позволяет блокам переноситься на мобильных устройствах */
-}
-
-/* Общие стили для блоков Desktop/Mobile */
-.desktop-view, .mobile-view {
-    flex: 1;
-    min-width: 300px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.country-header, .form-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    font-weight: bold;
-    margin: -20px -20px 20px -20px; /* Выравнивание по краям родителя */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-/* Скрытие дублирующих видов */
-.mobile-view {
-    /* На десктопе скрываем mobile-view */
-    display: none;
-}
-
-/* Стили для формы (Секция 2) */
-.login-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.text-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.gender-selection {
-    margin-bottom: 20px;
-}
-
-/* Стили для Radio Button/Checkbox */
-.country-item, .radio-label {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-}
-
-.country-item:last-child {
-    border-bottom: none;
-}
-
-.country-item input[type="radio"], .radio-label input[type="radio"] {
-    display: none; /* Скрываем стандартный radio */
-}
-
-.checkmark, .radio-dot {
-    margin-left: auto;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-}
-
-.radio-dot {
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    background-color: #fff;
-    content: '';
-}
-
-input[type="radio"]:checked + .radio-dot {
-    background-color: #4CAF50; /* Зеленая точка при выборе */
-    border-color: #4CAF50;
-}
-
-.checkmark {
-    color: #4CAF50;
-}
-
-/* Кнопка */
-.register-button {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.register-button:hover {
-    background-color: #45a049;
-}
-
-/* --- Секция 3: Список продуктов --- */
-.search-block {
-    float: left;
-    width: 50%; /* Занимает левую половину */
-    padding-right: 20px;
-    box-sizing: border-box;
-}
-
-.product-recommendation {
-    float: right;
-    width: 50%; /* Занимает правую половину */
-    padding-left: 20px;
-    box-sizing: border-box;
-}
-
-.search-block p, .product-recommendation p {
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.search-query {
-    background-color: #e0e0e0;
-    color: #333;
-    padding: 8px 12px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    display: inline-block;
-}
-
-.product-grid {
-    clear: both; /* Очистка флоатов */
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 колонки на десктопе */
-    gap: 15px;
-    margin-top: 20px;
-}
-
-/* Карточка продукта */
-.product-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.product-image-placeholder {
-    width: 100%;
-    height: 120px; /* Примерная высота */
-    background-color: #eee; /* Серый фон, как на макете */
-    margin-bottom: 10px;
-}
-
-.product-info-text {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.product-actions {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-}
-
-.action-icon {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* --- Медиа-запросы для адаптивности --- */
-
-/* Стили для Mobile/Планшеты (до 1279px) */
-@media (max-width: 1279px) {
-    .desktop-view {
-        display: none; /* Скрываем Desktop view */
+    // Функция для синхронизации выбора
+    function syncCountrySelection(sourceRadios, targetRadios) {
+        sourceRadios.forEach(sourceRadio => {
+            sourceRadio.addEventListener('change', (event) => {
+                if (event.target.checked) {
+                    const selectedValue = event.target.value;
+                    
+                    // Устанавливаем соответствующий radio-button в другом наборе
+                    targetRadios.forEach(targetRadio => {
+                        targetRadio.checked = targetRadio.value === selectedValue;
+                    });
+                    
+                    // Опционально: Вывод информации (для примера)
+                    console.log(`Выбрана страна: ${selectedValue}`);
+                }
+            });
+        });
     }
 
-    .mobile-view {
-        display: block; /* Показываем Mobile view */
-        width: 100%; /* Занимает всю ширину */
-        min-width: auto;
-    }
+    // Синхронизация Desktop -> Mobile
+    syncCountrySelection(desktopRadios, mobileRadios);
     
-    .country-wrapper, .form-wrapper {
-        gap: 20px;
-    }
+    // Синхронизация Mobile -> Desktop
+    syncCountrySelection(mobileRadios, desktopRadios);
 
-    /* Продуктовый список */
-    .search-block, .product-recommendation {
-        float: none;
-        width: 100%;
-        padding: 0;
-    }
 
-    .search-block {
-        margin-bottom: 20px;
-    }
-    
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки на мобильных */
-    }
-}
+    // ----------------------------------------------------
+    // Логика для Секции 2: Обработка формы (только для примера)
+    // ----------------------------------------------------
+    const loginForms = document.querySelectorAll('.login-form');
 
-/* Дополнительно для очень маленьких экранов */
-@media (max-width: 600px) {
-    .product-grid {
-        grid-template-columns: 1fr; /* 1 колонка на очень маленьких */
-    }
-}
+    loginForms.forEach(form => {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Отменяем стандартную отправку формы
+            
+            const nameInput = form.querySelector('input[type="text"]').value;
+            const genderInput = form.querySelector('input[name^="gender"]:checked').value;
+            
+            console.log('--- Отправка формы ---');
+            console.log(`Имя: ${nameInput}`);
+            console.log(`Пол: ${genderInput}`);
+            alert(`Пользователь ${nameInput} (${genderInput}) зарегистрирован.`);
+            
+            // Здесь должна быть логика отправки данных на сервер (AJAX/Fetch)
+        });
+    });
+
+    // ----------------------------------------------------
+    // Логика для Секции 3: Обработка клика по продукту (только для примера)
+    // ----------------------------------------------------
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach((card, index) => {
+        card.addEventListener('click', (event) => {
+            // Проверяем, был ли клик по иконке
+            if (event.target.classList.contains('action-icon')) {
+                const action = event.target.textContent;
+                console.log(`Клик по действию "${action}" на продукте #${index + 1}`);
+            } else {
+                console.log(`Клик по карточке продукта #${index + 1} (Переход на страницу товара)`);
+            }
+        });
+    });
+});
