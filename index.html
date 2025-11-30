@@ -3,137 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой Сайт</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="country-selection-container">
+    <section id="country-selection" class="container section-padding">
         <h2>Выбор страны</h2>
-        <div class="radio-group country-list">
-            <div class="radio-item">
-                <input type="radio" id="russia" name="country" value="Россия" checked>
-                <label for="russia">Россия</label>
+        <div class="country-wrapper">
+            <div class="country-list desktop-view">
+                <h3>Desktop - Primary - 1280+</h3>
+                <div class="country-header">Выбор страны</div>
+                <label class="country-item">
+                    <input type="radio" name="country_desktop" value="Россия" checked>
+                    Россия
+                    <span class="checkmark">✅</span>
+                </label>
+                <label class="country-item">
+                    <input type="radio" name="country_desktop" value="Беларусь">
+                    Беларусь
+                    <span class="radio-dot"></span>
+                </label>
+                <label class="country-item">
+                    <input type="radio" name="country_desktop" value="Казахстан">
+                    Казахстан
+                    <span class="radio-dot"></span>
+                </label>
+                <label class="country-item">
+                    <input type="radio" name="country_desktop" value="Киргизия">
+                    Киргизия
+                    <span class="radio-dot"></span>
+                </label>
+                <label class="country-item">
+                    <input type="radio" name="country_desktop" value="Армения">
+                    Армения
+                    <span class="radio-dot"></span>
+                </label>
+                <label class="country-item">
+                    <input type="radio" name="country_desktop" value="Узбекистан">
+                    Узбекистан
+                    <span class="radio-dot"></span>
+                </label>
             </div>
-            
-            <div class="radio-item">
-                <input type="radio" id="belarus" name="country" value="Беларусь">
-                <label for="belarus">Беларусь</label>
-            </div>
-            
-            <div class="radio-item">
-                <input type="radio" id="kazakhstan" name="country" value="Казахстан">
-                <label for="kazakhstan">Казахстан</label>
-            </div>
-            
-            <div class="radio-item">
-                <input type="radio" id="kyrgyzstan" name="country" value="Кыргызстан">
-                <label for="kyrgyzstan">Кыргызстан</label>
-            </div>
-            
-            <div class="radio-item">
-                <input type="radio" id="armenia" name="country" value="Армения">
-                <label for="armenia">Армения</label>
-            </div>
-            
-            <div class="radio-item">
-                <input type="radio" id="uzbekistan" name="country" value="Узбекистан">
-                <label for="uzbekistan">Узбекистан</label>
-            </div>
-        </div>
-    </div>
 
-    <div class="form-container">
-        <h1>Вход</h1>
-        <div class="form-group">
-            <label for="username">Ваше имя</label>
-            <input type="text" id="username" name="username" placeholder="Введите ваше имя">
-        </div>
-        <div class="form-group">
-            <label>Ваш пол</label>
-            <div class="radio-group gender-group">
-                <div class="radio-item">
-                    <input type="radio" id="male" name="gender" value="Мужской" checked>
-                    <label for="male">Мужской</label>
+            <div class="country-list mobile-view">
+                <h3>Mobile - 1 - 1279</h3>
+                <div class="country-header">Выбор страны</div>
+                <label class="country-item">
+                    <input type="radio" name="country_mobile" value="Россия" checked>
+                    Россия
+                    <span class="checkmark">✅</span>
+                </label>
+                <label class="country-item">
+                    <input type="radio" name="country_mobile" value="Беларусь">
+                    Беларусь
+                    <span class="radio-dot"></span>
+                </label>
                 </div>
-                <div class="radio-item">
-                    <input type="radio" id="female" name="gender" value="Женский">
-                    <label for="female">Женский</label>
-                </div>
-            </div>
         </div>
-        <button type="submit" class="submit-button">Зарегистрироваться</button>
-    </div>
+    </section>
 
-    <div class="product-grid-container">
-        <h2>Ищете что-то конкретное?</h2>
+    <hr>
+
+    <section id="login-registration" class="container section-padding">
+        <h2>Вход/Регистрация</h2>
+        <div class="form-wrapper">
+            <form class="login-form desktop-view">
+                <h3>Desktop - Primary - 1280+</h3>
+                <div class="form-header">Вход</div>
+                <label for="name-desktop">Ваше имя</label>
+                <input type="text" id="name-desktop" name="user_name_desktop" class="text-input" placeholder="Введите имя">
+
+                <div class="gender-selection">
+                    <label>Ваш пол</label>
+                    <label class="radio-label">
+                        <input type="radio" name="gender_desktop" value="Мужской" checked>
+                        Мужской
+                        <span class="checkmark">✅</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="gender_desktop" value="Женский">
+                        Женский
+                        <span class="radio-dot"></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="register-button">Зарегистрироваться</button>
+            </form>
+
+            <form class="login-form mobile-view">
+                <h3>Mobile - 1 - 1279</h3>
+                <div class="form-header">Вход</div>
+                <label for="name-mobile">Ваше имя</label>
+                <input type="text" id="name-mobile" name="user_name_mobile" class="text-input" placeholder="Введите имя">
+
+                <div class="gender-selection">
+                    <label>Ваш пол</label>
+                    <label class="radio-label">
+                        <input type="radio" name="gender_mobile" value="Мужской" checked>
+                        Мужской
+                        <span class="checkmark">✅</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="gender_mobile" value="Женский">
+                        Женский
+                        <span class="radio-dot"></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="register-button">Зарегистрироваться</button>
+            </form>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="product-list" class="container section-padding">
+        <h2>Список продуктов</h2>
+        <div class="search-block">
+            <p>Ищете что-то конкретное?</p>
+            <div class="search-query">Зимняя куртка мужская</div>
+            <div class="search-query">Кофе в зернах 1 кг</div>
+        </div>
+
+        <div class="product-recommendation">
+            <p>Вам может понравиться</p>
+        </div>
+
         <div class="product-grid">
             <div class="product-card">
                 <div class="product-image-placeholder"></div>
-                <p class="product-info">Информация о продукте</p>
+                <p class="product-info-text">Информация о продукте</p>
                 <div class="product-actions">
-                    <button class="add-to-cart-button">🛒</button>
-                    <button class="favorite-button">A</button>
+                    <span class="action-icon home-icon">🏠</span>
+                    <span class="action-icon cart-icon">🛒</span>
+                    <span class="action-icon user-icon">👤</span>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-image-placeholder"></div>
-                <p class="product-info">Информация о продукте</p>
-                <div class="product-actions">
-                    <button class="add-to-cart-button">🛒</button>
-                    <button class="favorite-button">A</button>
-                </div>
-            </div>
-             <div class="product-card">
-                <div class="product-image-placeholder"></div>
-                <p class="product-info">Информация о продукте</p>
-                <div class="product-actions">
-                    <button class="add-to-cart-button">🛒</button>
-                    <button class="favorite-button">A</button>
-                </div>
-            </div>
-             <div class="product-card">
-                <div class="product-image-placeholder"></div>
-                <p class="product-info">Информация о продукте</p>
-                <div class="product-actions">
-                    <button class="add-to-cart-button">🛒</button>
-                    <button class="favorite-button">A</button>
-                </div>
-            </div>
-             <div class="product-card">
-                <div class="product-image-placeholder"></div>
-                <p class="product-info">Информация о продукте</p>
-                <div class="product-actions">
-                    <button class="add-to-cart-button">🛒</button>
-                    <button class="favorite-button">A</button>
-                </div>
-            </div>
-             <div class="product-card">
-                <div class="product-image-placeholder"></div>
-                <p class="product-info">Информация о продукте</p>
-                <div class="product-actions">
-                    <button class="add-to-cart-button">🛒</button>
-                    <button class="favorite-button">A</button>
-                </div>
-            </div>
-             <div class="product-card">
-                <div class="product-image-placeholder"></div>
-                <p class="product-info">Информация о продукте</p>
-                <div class="product-actions">
-                    <button class="add-to-cart-button">🛒</button>
-                    <button class="favorite-button">A</button>
-                </div>
-            </div>
-             <div class="product-card">
-                <div class="product-image-placeholder"></div>
-                <p class="product-info">Информация о продукте</p>
-                <div class="product-actions">
-                    <button class="add-to-cart-button">🛒</button>
-                    <button class="favorite-button">A</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
+            <div class="product-card"><div class="product-image-placeholder"></div><p class="product-info-text">Информация о продукте</p><div class="product-actions"><span class="action-icon home-icon">🏠</span><span class="action-icon cart-icon">🛒</span><span class="action-icon user-icon">👤</span></div></div>
+            <div class="product-card"><div class="product-image-placeholder"></div><p class="product-info-text">Информация о продукте</p><div class="product-actions"><span class="action-icon home-icon">🏠</span><span class="action-icon cart-icon">🛒</span><span class="action-icon user-icon">👤</span></div></div>
+            <div class="product-card"><div class="product-image-placeholder"></div><p class="product-info-text">Информация о продукте</p><div class="product-actions"><span class="action-icon home-icon">🏠</span><span class="action-icon cart-icon">🛒</span><span class="action-icon user-icon">👤</span></div></div>
+            <div class="product-card"><div class="product-image-placeholder"></div><p class="product-info-text">Информация о продукте</p><div class="product-actions"><span class="action-icon home-icon">🏠</span><span class="action-icon cart-icon">🛒</span><span class="action-icon user-icon">👤</span></div></div>
+            <div class="product-card"><div class="product-image-placeholder"></div><p class="product-info-text">Информация о продукте</p><div class="product-actions"><span class="action-icon home-icon">🏠</span><span class="action-icon cart-icon">🛒</span><span class="action-icon user-icon">👤</span></div></div>
+            <div class="product-card"><div class="product-image-placeholder"></div><p class="product-info-text">Информация о продукте</p><div class="product-actions"><span class="action-icon home-icon">🏠</span><span class="action-icon cart-icon">🛒</span><span class="action-icon user-icon">👤</span></div></div>
+            <div class="product-card"><div class="product-image-placeholder"></div><p class="product-info-text">Информация о продукте</p><div class="product-actions"><span class="action-icon home-icon">🏠</span><span class="action-icon cart-icon">🛒</span><span class="action-icon user-icon">👤</span></div></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
