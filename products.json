@@ -1,34 +1,23 @@
-[
-  {
-    "id": 1,
-    "name": "Зимняя куртка мужская",
-    "price_kg": 25.50,
-    "unit": "шт",
-    "image_url": "images/coat.jpg",
-    "description": "Информация о продукте..."
-  },
-  {
-    "id": 2,
-    "name": "Кофе в зёрнах 1 кг",
-    "price_kg": 12.99,
-    "unit": "кг",
-    "image_url": "images/coffee.jpg",
-    "description": "Информация о продукте..."
-  },
-  {
-    "id": 3,
-    "name": "Футболка белая",
-    "price_kg": 7.50,
-    "unit": "шт",
-    "image_url": "images/tshirt.jpg",
-    "description": "Информация о продукте..."
-  },
-  {
-    "id": 4,
-    "name": "Кроссовки",
-    "price_kg": 45.00,
-    "unit": "пара",
-    "image_url": "images/shoes.jpg",
-    "description": "Информация о продукте..."
-  }
-]
+{
+  "recommended": [
+    { "name": "Зимняя куртка мужская" },
+    { "name": "Кофе в зёрнах 1 кг" }
+  ],
+  "searchResults": [
+    { "name": "Зимняя куртка мужская" },
+    { "name": "Кофе в зёрнах 1 кг" }
+  ],
+  "mayLike": [
+    { "name": "Печенье 500г" },
+    { "name": "Чай листовой" },
+    { "name": "Молоко 1л" }
+  ],
+  "countries": [
+    { "name": "Россия" },
+    { "name": "Беларусь" },
+    { "name": "Казахстан" },
+    { "name": "Киргизия" },
+    { "name": "Армения" },
+    { "name": "Узбекистан" }
+  ]
+}
