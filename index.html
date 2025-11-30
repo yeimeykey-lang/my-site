@@ -4,52 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой Сайт</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
-    <section class="auth-page">
-        <h2>Вход</h2>
-        <div class="form-container desktop">
-            <div class="header-bar green-bg">Вход</div>
-            <form id="desktop-login">
-                <label for="desktop-name">Ваше имя</label>
-                <input type="text" id="desktop-name" required>
-                
-                <div class="gender-selection">
-                    <p>Ваш пол</p>
-                    <label><input type="radio" name="gender" value="male" checked> Мужской</label>
-                    <label><input type="radio" name="gender" value="female"> Женский</label>
-                </div>
-
-                <button type="submit" class="green-bg">Зарегистрироваться</button>
-            </form>
+    <div class="country-selection-container">
+        <h2>Выбор страны</h2>
+        <div class="radio-group country-list">
+            <div class="radio-item">
+                <input type="radio" id="russia" name="country" value="Россия" checked>
+                <label for="russia">Россия</label>
+            </div>
+            
+            <div class="radio-item">
+                <input type="radio" id="belarus" name="country" value="Беларусь">
+                <label for="belarus">Беларусь</label>
+            </div>
+            
+            <div class="radio-item">
+                <input type="radio" id="kazakhstan" name="country" value="Казахстан">
+                <label for="kazakhstan">Казахстан</label>
+            </div>
+            
+            <div class="radio-item">
+                <input type="radio" id="kyrgyzstan" name="country" value="Кыргызстан">
+                <label for="kyrgyzstan">Кыргызстан</label>
+            </div>
+            
+            <div class="radio-item">
+                <input type="radio" id="armenia" name="country" value="Армения">
+                <label for="armenia">Армения</label>
+            </div>
+            
+            <div class="radio-item">
+                <input type="radio" id="uzbekistan" name="country" value="Узбекистан">
+                <label for="uzbekistan">Узбекистан</label>
+            </div>
         </div>
-        </section>
+    </div>
 
-    <section class="country-selection">
-        <div class="country-container desktop">
-            <div class="header-bar green-bg">Выбор страны</div>
-            <div id="country-list">
-                </div>
+    <div class="form-container">
+        <h1>Вход</h1>
+        <div class="form-group">
+            <label for="username">Ваше имя</label>
+            <input type="text" id="username" name="username" placeholder="Введите ваше имя">
         </div>
-    </section>
+        <div class="form-group">
+            <label>Ваш пол</label>
+            <div class="radio-group gender-group">
+                <div class="radio-item">
+                    <input type="radio" id="male" name="gender" value="Мужской" checked>
+                    <label for="male">Мужской</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="female" name="gender" value="Женский">
+                    <label for="female">Женский</label>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="submit-button">Зарегистрироваться</button>
+    </div>
 
-    <section class="products-list">
+    <div class="product-grid-container">
         <h2>Ищете что-то конкретное?</h2>
-        <div class="search-bar">
-            </div>
-        
-        <div class="main-products-grid" id="products-container">
-            </div>
-        
-        <aside class="recommendations">
-            <h3>Вам может понравиться</h3>
-            <div id="recommendations-container">
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image-placeholder"></div>
+                <p class="product-info">Информация о продукте</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-button">🛒</button>
+                    <button class="favorite-button">A</button>
                 </div>
-        </aside>
-    </section>
+            </div>
+            <div class="product-card">
+                <div class="product-image-placeholder"></div>
+                <p class="product-info">Информация о продукте</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-button">🛒</button>
+                    <button class="favorite-button">A</button>
+                </div>
+            </div>
+             <div class="product-card">
+                <div class="product-image-placeholder"></div>
+                <p class="product-info">Информация о продукте</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-button">🛒</button>
+                    <button class="favorite-button">A</button>
+                </div>
+            </div>
+             <div class="product-card">
+                <div class="product-image-placeholder"></div>
+                <p class="product-info">Информация о продукте</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-button">🛒</button>
+                    <button class="favorite-button">A</button>
+                </div>
+            </div>
+             <div class="product-card">
+                <div class="product-image-placeholder"></div>
+                <p class="product-info">Информация о продукте</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-button">🛒</button>
+                    <button class="favorite-button">A</button>
+                </div>
+            </div>
+             <div class="product-card">
+                <div class="product-image-placeholder"></div>
+                <p class="product-info">Информация о продукте</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-button">🛒</button>
+                    <button class="favorite-button">A</button>
+                </div>
+            </div>
+             <div class="product-card">
+                <div class="product-image-placeholder"></div>
+                <p class="product-info">Информация о продукте</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-button">🛒</button>
+                    <button class="favorite-button">A</button>
+                </div>
+            </div>
+             <div class="product-card">
+                <div class="product-image-placeholder"></div>
+                <p class="product-info">Информация о продукте</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-button">🛒</button>
+                    <button class="favorite-button">A</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
