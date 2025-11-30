@@ -2,302 +2,259 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f0f2f5;
-    color: #333;
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 30px; /* Отступ между блоками */
-    justify-content: center;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* Стили для контейнеров */
-.form-container, 
-.country-selection-container,
-.product-grid-container {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 40px 0;
+}
+
+/* --- Секция 1 & 2: Адаптивные контейнеры --- */
+.country-wrapper, .form-wrapper {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap; /* Позволяет блокам переноситься на мобильных устройствах */
+}
+
+/* Общие стили для блоков Desktop/Mobile */
+.desktop-view, .mobile-view {
+    flex: 1;
+    min-width: 300px;
     background-color: #fff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.country-header, .form-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    margin: -20px -20px 20px -20px; /* Выравнивание по краям родителя */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Скрытие дублирующих видов */
+.mobile-view {
+    /* На десктопе скрываем mobile-view */
+    display: none;
+}
+
+/* Стили для формы (Секция 2) */
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     box-sizing: border-box;
 }
 
-/* Заголовки */
-h1, h2 {
-    text-align: center;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 24px;
-}
-
-/* --- Стили для Формы (Вход/Регистрация) --- */
-.form-container {
-    max-width: 350px;
-    width: 100%;
-    /* Добавляем градиент для верхней части, как на скриншоте 3 */
-    border-top: 5px solid #28a745;
-}
-
-.form-group {
+.gender-selection {
     margin-bottom: 20px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #555;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-    background-color: #f7f7f7; /* Фон поля ввода */
-}
-
-/* Радио-кнопки (Пол) */
-.radio-group.gender-group {
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.radio-group .radio-item {
+/* Стили для Radio Button/Checkbox */
+.country-item, .radio-label {
     display: flex;
     align-items: center;
-}
-
-.radio-group input[type="radio"] {
-    margin-right: 8px;
-    transform: scale(1.1);
-}
-
-.radio-group label {
-    font-weight: normal;
-    margin-bottom: 0;
-}
-
-/* Кнопка "Зарегистрироваться" (Зеленая) */
-.submit-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #28a745; 
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-.submit-button:hover {
-    background-color: #218838;
-}
-
-
-/* --- Стили для Выбора страны --- */
-.country-selection-container {
-    max-width: 350px;
-    width: 100%;
-    /* Добавляем градиент для верхней части, как на скриншоте 2 */
-    border-top: 5px solid #28a745;
-}
-
-/* Список стран */
-.radio-group.country-list {
-    display: block; /* Элементы идут по вертикали */
-}
-
-.country-list .radio-item {
     padding: 10px 0;
     border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between; /* Текст слева, кружок справа */
-    align-items: center;
+    cursor: pointer;
 }
 
-.country-list .radio-item:last-child {
+.country-item:last-child {
     border-bottom: none;
 }
 
-.country-list input[type="radio"] {
-    /* Скрываем стандартный радио-переключатель */
-    opacity: 0; 
-    position: absolute;
+.country-item input[type="radio"], .radio-label input[type="radio"] {
+    display: none; /* Скрываем стандартный radio */
 }
 
-.country-list label {
-    /* Используем ::before для текста и ::after для стилизованного кружка */
-    flex-grow: 1;
-    cursor: pointer;
-    font-weight: normal;
-    position: relative;
-    padding-left: 0;
-    margin-bottom: 0;
+.checkmark, .radio-dot {
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
 }
 
-/* Стиль для кастомного кружка (неактивный) */
-.country-list .radio-item::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    border: 1px solid #ccc;
+.radio-dot {
+    border: 2px solid #ccc;
     border-radius: 50%;
     background-color: #fff;
-    transition: all 0.2s;
-}
-
-/* Стиль для кастомного кружка (активный) */
-.country-list input[type="radio"]:checked + label + .radio-item::after {
-    background-color: #28a745; /* Зеленый цвет для выбранного */
-    border-color: #28a745;
-    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
-}
-
-/* Стиль для галочки (имитация зеленой галочки на скриншоте) */
-.country-list input[type="radio"]:checked + label::before {
-    content: '✓';
-    color: #28a745;
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 5px;
-}
-/* Сброс стиля для кастомного кружка в .radio-item, чтобы использовать стилизованную галочку и кружок */
-.country-list .radio-item {
-    position: relative;
-    padding-right: 20px; /* Отступ справа для кастомного кружка */
-}
-.country-list .radio-item::after {
     content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ddd;
-    border-radius: 50%;
-}
-.country-list input[type="radio"]:checked ~ .radio-item::after {
-    background-color: #28a745; /* Кружок заливается зеленым */
-    border-color: #28a745;
-    content: '✓'; /* Добавляем галочку в кружок */
-    color: white;
-    font-size: 14px;
-    line-height: 18px;
-    text-align: center;
 }
 
+input[type="radio"]:checked + .radio-dot {
+    background-color: #4CAF50; /* Зеленая точка при выборе */
+    border-color: #4CAF50;
+}
 
-/* --- Стили для Сетки Товаров --- */
-.product-grid-container {
+.checkmark {
+    color: #4CAF50;
+}
+
+/* Кнопка */
+.register-button {
     width: 100%;
-    max-width: 900px;
-    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.register-button:hover {
+    background-color: #45a049;
+}
+
+/* --- Секция 3: Список продуктов --- */
+.search-block {
+    float: left;
+    width: 50%; /* Занимает левую половину */
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.product-recommendation {
+    float: right;
+    width: 50%; /* Занимает правую половину */
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.search-block p, .product-recommendation p {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.search-query {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 .product-grid {
+    clear: both; /* Очистка флоатов */
     display: grid;
-    /* 4 колонки на больших экранах */
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки на десктопе */
     gap: 15px;
+    margin-top: 20px;
 }
 
+/* Карточка продукта */
 .product-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
     text-align: center;
 }
 
 .product-image-placeholder {
-    height: 120px;
-    background-color: #f7f7f7;
+    width: 100%;
+    height: 120px; /* Примерная высота */
+    background-color: #eee; /* Серый фон, как на макете */
     margin-bottom: 10px;
 }
 
-.product-info {
-    padding: 5px 10px;
+.product-info-text {
     font-size: 14px;
-    color: #666;
-    background-color: #fff;
-    margin: 0;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .product-actions {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-top: 1px solid #e0e0e0;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
 }
 
-.add-to-cart-button, .favorite-button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
+.action-icon {
+    font-size: 20px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-.add-to-cart-button {
-    background-color: #28a745;
-    color: white;
-}
+/* --- Медиа-запросы для адаптивности --- */
 
-.favorite-button {
-    background-color: #f0f0f0;
-    color: #333;
-    font-weight: bold;
-    width: 30px;
-    height: 30px;
-    line-height: 1;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ccc;
-}
-
-
-/* --- Адаптивность для разных экранов --- */
-@media (max-width: 950px) {
-    .product-grid {
-        /* 3 колонки на средних экранах */
-        grid-template-columns: repeat(3, 1fr); 
+/* Стили для Mobile/Планшеты (до 1279px) */
+@media (max-width: 1279px) {
+    .desktop-view {
+        display: none; /* Скрываем Desktop view */
     }
-}
 
-@media (max-width: 768px) {
-    body {
+    .mobile-view {
+        display: block; /* Показываем Mobile view */
+        width: 100%; /* Занимает всю ширину */
+        min-width: auto;
+    }
+    
+    .country-wrapper, .form-wrapper {
         gap: 20px;
     }
-    .form-container, 
-    .country-selection-container {
-        max-width: 95%; /* Шире на мобильных */
+
+    /* Продуктовый список */
+    .search-block, .product-recommendation {
+        float: none;
+        width: 100%;
+        padding: 0;
     }
+
+    .search-block {
+        margin-bottom: 20px;
+    }
+    
     .product-grid {
-        /* 2 колонки на маленьких экранах */
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на мобильных */
     }
 }
 
-@media (max-width: 480px) {
+/* Дополнительно для очень маленьких экранов */
+@media (max-width: 600px) {
     .product-grid {
-        /* 1 колонка на очень маленьких экранах */
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* 1 колонка на очень маленьких */
     }
 }
