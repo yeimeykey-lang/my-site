@@ -3,45 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon KZ Market</title>
+    <title>Мой Сайт</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="header">
-    <div class="header-content">
-        <h1 class="title">Ищете что-то конкретное?</h1>
-        <input class="search" type="text" placeholder="Зимняя куртка мужская">
-    </div>
-</header>
+    <section class="auth-page">
+        <h2>Вход</h2>
+        <div class="form-container desktop">
+            <div class="header-bar green-bg">Вход</div>
+            <form id="desktop-login">
+                <label for="desktop-name">Ваше имя</label>
+                <input type="text" id="desktop-name" required>
+                
+                <div class="gender-selection">
+                    <p>Ваш пол</p>
+                    <label><input type="radio" name="gender" value="male" checked> Мужской</label>
+                    <label><input type="radio" name="gender" value="female"> Женский</label>
+                </div>
 
-<section class="catalog">
-    <h2 class="section-title">Каталог товаров</h2>
-    
-    <div class="grid">
-        <div class="item">
-            <div class="img"></div>
-            <p class="name">Информация о продукте</p>
+                <button type="submit" class="green-bg">Зарегистрироваться</button>
+            </form>
         </div>
+        </section>
 
-        <div class="item">
-            <div class="img"></div>
-            <p class="name">Информация о продукте</p>
+    <section class="country-selection">
+        <div class="country-container desktop">
+            <div class="header-bar green-bg">Выбор страны</div>
+            <div id="country-list">
+                </div>
         </div>
+    </section>
 
-        <div class="item">
-            <div class="img"></div>
-            <p class="name">Информация о продукте</p>
-        </div>
+    <section class="products-list">
+        <h2>Ищете что-то конкретное?</h2>
+        <div class="search-bar">
+            </div>
+        
+        <div class="main-products-grid" id="products-container">
+            </div>
+        
+        <aside class="recommendations">
+            <h3>Вам может понравиться</h3>
+            <div id="recommendations-container">
+                </div>
+        </aside>
+    </section>
 
-        <div class="item">
-            <div class="img"></div>
-            <p class="name">Информация о продукте</p>
-        </div>
-    </div>
-</section>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
