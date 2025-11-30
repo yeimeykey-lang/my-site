@@ -1,234 +1,99 @@
 /* Общие стили */
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     background-color: #f4f4f4;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section-padding {
-    padding: 40px 0;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 40px 0;
-}
-
-/* --- Секция 1 & 2: Адаптивные контейнеры --- */
-.country-wrapper, .form-wrapper {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    flex-wrap: wrap; 
-}
-
-.desktop-view, .mobile-view {
-    flex: 1;
-    min-width: 300px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.country-header, .form-header {
-    background-color: #4CAF50;
+.green-bg {
+    background-color: #4CAF50; /* Насыщенный зеленый */
     color: white;
     padding: 15px;
     text-align: center;
     font-weight: bold;
-    margin: -20px -20px 20px -20px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 }
 
-/* Скрытие дублирующих видов */
-.mobile-view {
-    display: none;
+/* Секция Входа */
+.auth-page, .country-selection {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* --- Стили для Radio Button/Checkbox и Секции "Выбор страны" --- */
-.country-item, .radio-label {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+.form-container {
+    padding: 20px;
+}
+
+input[type="text"], button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+button.green-bg {
     cursor: pointer;
-    color: #333; /* Базовый цвет текста */
-    position: relative; /* Для позиционирования индикатора */
+    border: none;
+    font-size: 16px;
 }
 
-.country-item:last-child {
-    border-bottom: none;
-}
-
-/* Скрываем нативные радио-кнопки */
-.country-item input[type="radio"], .radio-label input[type="radio"] {
-    display: none;
-}
-
-/* --- СТИЛИЗАЦИЯ ИНДИКАТОРА (ТОЧКА/ГАЛОЧКА) --- */
-
-.status-indicator {
-    margin-left: auto;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc; /* Серая обводка по умолчанию */
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-    font-size: 10px; /* Размер для галочки */
-}
-
-/* Стиль для выбранного элемента (добавляется JS) */
-.country-item.selected, .radio-label.selected {
-    background-color: #f7fff7; /* Светло-зеленый фон для выделения */
-    font-weight: bold;
-    color: #4CAF50; /* Зеленый цвет текста */
-}
-
-/* Если элемент выбран: */
-.country-item.selected .status-indicator, .radio-label.selected .status-indicator {
-    border-color: #4CAF50; /* Зеленая обводка */
-    background-color: #4CAF50; /* Зеленый фон */
-}
-
-/* Галочка в выбранном элементе (рисуется внутри зеленого круга) */
-.country-item.selected .status-indicator:after, .radio-label.selected .status-indicator:after {
-    content: '✓'; /* Галочка */
-    color: white; /* Белая галочка */
-    font-size: 14px;
-    line-height: 1; /* Для центрирования */
-}
-
-
-/* --- Стили для Формы (Секция 2) --- */
-.login-form label {
-    display: block;
+.gender-selection p {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.text-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.gender-selection {
-    margin-bottom: 20px;
-}
-
-/* --- Стили для Секции 3: Продукты (Возвращены) --- */
-.search-block p {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.search-query {
-    display: inline-block;
-    padding: 8px 15px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    background-color: #e0e0e0;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.product-recommendation p {
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.product-grid {
+/* Секция Товаров */
+.products-list {
+    max-width: 1200px;
+    margin: 40px auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 3fr 1fr; /* Основная сетка как на скриншоте */
     gap: 20px;
-    padding-top: 10px;
+}
+
+.main-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки для товаров */
+    gap: 15px;
 }
 
 .product-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    overflow: hidden;
-    padding: 15px;
-    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
 }
 
-.product-image-placeholder {
-    width: 100%;
-    height: 150px;
-    background-color: #ccc;
-    margin-bottom: 10px;
-    border-radius: 4px;
+.product-card-info {
+    padding: 10px 0;
+    min-height: 80px; /* Чтобы карточки были одинаковой высоты */
+    line-height: 1.5;
+    background-color: #e6ffe6; /* Светло-зеленый фон для информации */
+    border-top: 3px solid #4CAF50;
 }
 
-.product-info-text {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.product-actions {
+/* Секция выбора страны */
+.country-item {
     display: flex;
-    justify-content: space-around;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
 }
 
-.action-icon {
-    font-size: 18px;
-    cursor: pointer;
+.country-item input[type="radio"] {
+    /* Стилизация радиокнопки для имитации круга/галочки */
+    margin-right: 10px;
 }
 
-
-/* --- Медиа-запросы для адаптивности --- */
-@media (max-width: 1279px) {
-    .desktop-view {
-        display: none;
+/* Адаптивность для мобильной версии (если нужно) */
+@media (max-width: 768px) {
+    .products-list {
+        grid-template-columns: 1fr; /* На мобильном одна колонка */
     }
-
-    .mobile-view {
-        display: block;
-        width: 100%;
-        min-width: auto;
-    }
-    
-    .country-wrapper, .form-wrapper {
-        gap: 20px;
-    }
-    
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .product-grid {
-        grid-template-columns: 1fr;
+    .main-products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки для товаров на мобильном */
     }
 }
