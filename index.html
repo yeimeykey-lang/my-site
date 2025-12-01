@@ -1,67 +1,90 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Demo Shop</title>
-  <link rel="stylesheet" href="styles.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- адаптивность -->
+    <title>Магазин</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="header-buttons">
-      <button id="registerBtn">Зарегистрироваться</button>
-      <button id="loginBtn">Войти</button>
+<header>
+    <button id="showRegister">Регистрация</button>
+    <button id="showLogin">Вход</button>
+</header>
+
+<!-- Форма регистрации -->
+<div id="registerForm">
+  <form id="formRegister">
+    <h2>Регистрация</h2>
+    <input type="text" id="fullName" placeholder="ФИО" required>
+    <input type="text" id="phoneOrEmail" placeholder="Телефон или Email" required>
+    <select id="country" required>
+      <option value="">Выберите страну</option>
+      <option value="Россия">Россия</option>
+      <option value="Беларусь">Беларусь</option>
+      <option value="Казахстан">Казахстан</option>
+      <option value="Киргизия">Киргизия</option>
+      <option value="Армения">Армения</option>
+      <option value="Узбекистан">Узбекистан</option>
+    </select>
+    <button type="submit">Зарегистрироваться</button>
+    <p>Уже есть аккаунт? <a href="#" id="toLogin">Войти</a></p>
+  </form>
+</div>
+
+<!-- Форма входа -->
+<div id="loginForm" style="display:none;">
+  <form id="formLogin">
+    <h2>Вход</h2>
+    <input type="text" id="loginField" placeholder="Телефон или Email" required>
+    <button type="submit">Войти</button>
+    <p>Нет аккаунта? <a href="#" id="toRegister">Регистрация</a></p>
+  </form>
+</div>
+
+<!-- Раздел с товарами (скрыт по умолчанию) -->
+<section id="productsSection">
+  <h2>Рекомендуемые товары</h2>
+  <div class="products-list">
+    <!-- Пример карточки товара -->
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Товар">
+      <h3>Товар 1</h3>
+      <p>Краткое описание товара.</p>
+      <p class="price">1000 ₽</p>
     </div>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Поиск"/>
-      <button id="searchBtn">🔍</button>
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Товар">
+      <h3>Товар 2</h3>
+      <p>Краткое описание товара.</p>
+      <p class="price">1500 ₽</p>
     </div>
-  </header>
-  <main>
-    <section id="discounts">
-      <h2>Скидки!</h2>
-      <div class="discounts-grid">
-        <div class="discount-card"></div>
-        <div class="discount-card"></div>
-      </div>
-    </section>
-    <section id="recommended">
-      <h2>Подобрали для вас</h2>
-      <div class="products-grid" id="productsGrid">
-        <!-- JS добавит продукты -->
-      </div>
-    </section>
-    <section id="specificSearch">
-      <h2>Ищете что-то конкретное?</h2>
-      <div class="search-result">
-        <span>Зимняя куртка мужская</span>
-        <span>Кофе в зёрнах 1 кг</span>
-      </div>
-      <div class="products-grid" id="searchProductsGrid"></div>
-    </section>
-    <section id="mayLike">
-      <h2>Вам может понравиться</h2>
-      <div class="products-grid" id="mayLikeGrid"></div>
-    </section>
-    <section id="countrySelection">
-      <h2>Выбор страны</h2>
-      <div class="countries-list" id="countriesList">
-        <!-- JS добавит страны -->
-      </div>
-    </section>
-    <section id="loginForm" style="display:none;">
-      <h2>Вход</h2>
-      <input type="tel" id="phoneInput" placeholder="Ваш номер телефона"/>
-      <button id="getCodeBtn">Получить код</button>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-icons">
-      <span>🏠</span>
-      <span>🛒</span>
-      <span>👤</span>
+    <!-- ...другие товары... -->
+  </div>
+
+  <h2>Результаты поиска</h2>
+  <div class="products-list">
+    <!-- При поиске сюда будут подставляться товары -->
+  </div>
+
+  <h2>Похожие товары</h2>
+  <div class="products-list">
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Товар">
+      <h3>Товар A</h3>
+      <p>Краткое описание товара.</p>
+      <p class="price">1200 ₽</p>
     </div>
-  </footer>
-  <script src="script.js"></script>
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Товар">
+      <h3>Товар B</h3>
+      <p>Краткое описание товара.</p>
+      <p class="price">1300 ₽</p>
+    </div>
+    <!-- ...другие товары... -->
+  </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
