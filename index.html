@@ -125,5 +125,14 @@
   </template>
 
   <script src="script.js"></script>
+  <script>
+    // Vercel Speed Insights - inject on client side
+    (function() {
+      var script = document.createElement('script');
+      script.src = '/_vercel/speed-insights/script.js';
+      script.defer = true;
+      document.body.appendChild(script);
+    })();
+  </script>
 </body>
 </html>
