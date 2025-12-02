@@ -1,90 +1,129 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- адаптивность -->
-    <title>Магазин</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hackathon KZ — Магазин</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <button id="showRegister">Регистрация</button>
-    <button id="showLogin">Вход</button>
-</header>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">Hackathon <span class="accent">KZ</span></div>
 
-<!-- Форма регистрации -->
-<div id="registerForm">
-  <form id="formRegister">
-    <h2>Регистрация</h2>
-    <input type="text" id="fullName" placeholder="ФИО" required>
-    <input type="text" id="phoneOrEmail" placeholder="Телефон или Email" required>
-    <select id="country" required>
-      <option value="">Выберите страну</option>
-      <option value="Россия">Россия</option>
-      <option value="Беларусь">Беларусь</option>
-      <option value="Казахстан">Казахстан</option>
-      <option value="Киргизия">Киргизия</option>
-      <option value="Армения">Армения</option>
-      <option value="Узбекистан">Узбекистан</option>
-    </select>
-    <button type="submit">Зарегистрироваться</button>
-    <p>Уже есть аккаунт? <a href="#" id="toLogin">Войти</a></p>
-  </form>
-</div>
+      <div class="search-wrap">
+        <input id="searchInput" class="search-input" type="search" placeholder="Поиск: зимняя куртка, кофе..." />
+      </div>
 
-<!-- Форма входа -->
-<div id="loginForm" style="display:none;">
-  <form id="formLogin">
-    <h2>Вход</h2>
-    <input type="text" id="loginField" placeholder="Телефон или Email" required>
-    <button type="submit">Войти</button>
-    <p>Нет аккаунта? <a href="#" id="toRegister">Регистрация</a></p>
-  </form>
-</div>
-
-<!-- Раздел с товарами (скрыт по умолчанию) -->
-<section id="productsSection">
-  <h2>Рекомендуемые товары</h2>
-  <div class="products-list">
-    <!-- Пример карточки товара -->
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="Товар">
-      <h3>Товар 1</h3>
-      <p>Краткое описание товара.</p>
-      <p class="price">1000 ₽</p>
+      <div class="controls">
+        <select id="countrySelect" class="country-select" aria-label="Выбор страны">
+          <option value="">Страна</option>
+          <option value="Россия">Россия</option>
+          <option value="Беларусь">Беларусь</option>
+          <option value="Казахстан">Казахстан</option>
+          <option value="Киргизия">Киргизия</option>
+          <option value="Армения">Армения</option>
+          <option value="Узбекистан">Узбекистан</option>
+        </select>
+        <button id="openAuthBtn" class="btn btn-outline">Вход / Регистрация</button>
+      </div>
     </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="Товар">
-      <h3>Товар 2</h3>
-      <p>Краткое описание товара.</p>
-      <p class="price">1500 ₽</p>
-    </div>
-    <!-- ...другие товары... -->
-  </div>
+  </header>
 
-  <h2>Результаты поиска</h2>
-  <div class="products-list">
-    <!-- При поиске сюда будут подставляться товары -->
-  </div>
+  <main class="container main-grid">
+    <!-- Левая панель: аутентификация + выбор страны + быстрые ссылки -->
+    <aside class="left-panel" id="leftPanel">
+      <div class="auth-card card" id="authCard">
+        <div class="tabs">
+          <button id="tabRegister" class="tab active">Регистрация</button>
+          <button id="tabLogin" class="tab">Вход</button>
+        </div>
 
-  <h2>Похожие товары</h2>
-  <div class="products-list">
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="Товар">
-      <h3>Товар A</h3>
-      <p>Краткое описание товара.</p>
-      <p class="price">1200 ₽</p>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="Товар">
-      <h3>Товар B</h3>
-      <p>Краткое описание товара.</p>
-      <p class="price">1300 ₽</p>
-    </div>
-    <!-- ...другие товары... -->
-  </div>
-</section>
+        <form id="formRegister" class="form">
+          <h3 class="form-title">Регистрация</h3>
+          <input id="fullName" type="text" placeholder="ФИО" required />
+          <input id="contactReg" type="text" placeholder="Телефон или Email" required />
+          <select id="countryReg" required>
+            <option value="">Выберите страну</option>
+            <option value="Россия">Россия</option>
+            <option value="Беларусь">Беларусь</option>
+            <option value="Казахстан">Казахстан</option>
+            <option value="Киргизия">Киргизия</option>
+            <option value="Армения">Армения</option>
+            <option value="Узбекистан">Узбекистан</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
+          <p class="muted">Уже есть аккаунт? <a href="#" id="toLogin">Войти</a></p>
+        </form>
 
-<script src="script.js"></script>
+        <form id="formLogin" class="form hidden">
+          <h3 class="form-title">Вход</h3>
+          <input id="contactLogin" type="text" placeholder="Телефон или Email" required />
+          <button class="btn btn-primary" type="submit">Войти</button>
+          <p class="muted">Нет аккаунта? <a href="#" id="toRegister">Регистрация</a></p>
+        </form>
+
+        <div id="authMsg" class="auth-msg" aria-live="polite"></div>
+      </div>
+
+      <div class="country-card card">
+        <h4>Выбор страны</h4>
+        <div class="country-list">
+          <label><input type="radio" name="country_right" value="Россия"> Россия</label>
+          <label><input type="radio" name="country_right" value="Беларусь"> Беларусь</label>
+          <label><input type="radio" name="country_right" value="Казахстан"> Казахстан</label>
+          <label><input type="radio" name="country_right" value="Киргизия"> Киргизия</label>
+          <label><input type="radio" name="country_right" value="Армения"> Армения</label>
+          <label><input type="radio" name="country_right" value="Узбекистан"> Узбекистан</label>
+        </div>
+      </div>
+
+      <div class="quick-links card">
+        <h4>Быстро</h4>
+        <ul>
+          <li><a href="#recommendedSection">Рекомендуем</a></li>
+          <li><a href="#searchSection">Поиск</a></li>
+          <li><a href="#mayLikeSection">Похожие</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Правая: каталог -->
+    <section class="catalog" id="catalog">
+      <h2 id="recommendedSection" class="section-title">Рекомендуем</h2>
+      <div id="recommended" class="grid"></div>
+
+      <h2 id="searchSection" class="section-title">Результаты поиска</h2>
+      <div id="searchResults" class="grid"></div>
+
+      <h2 id="mayLikeSection" class="section-title">Вам может понравиться</h2>
+      <div id="mayLike" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© Hackathon KZ — демо</div>
+      <div><button id="logoutBtn" class="btn btn-ghost hidden">Выйти</button></div>
+    </div>
+  </footer>
+
+  <!-- Шаблон карточки -->
+  <template id="cardTpl">
+    <article class="product-card">
+      <div class="media"><img alt="product" /></div>
+      <div class="body">
+        <h3 class="title"></h3>
+        <p class="desc"></p>
+        <div class="row">
+          <div class="price"></div>
+          <button class="btn btn-sm">В корзину</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
 </body>
 </html>
