@@ -1,5 +1,26 @@
-{
-  "recommended": [],
-  "searchResults": [],
-  "mayLike": []
-}
+[
+  {
+    "name": "HandTool — Многофункциональный набор",
+    "price": "12 990",
+    "description": "Набор инструментов для ремонта и мелких задач — удобно хранить и носить.",
+    "image": "https://via.placeholder.com/600x400?text=HandTool+Set"
+  },
+  {
+    "name": "EcoMug — Термокружка 450ml",
+    "price": "3 490",
+    "description": "Держит тепло до 6 часов, герметичная крышка, стильный дизайн.",
+    "image": "https://via.placeholder.com/600x400?text=EcoMug"
+  },
+  {
+    "name": "CablePack — Набор кабелей",
+    "price": "1 199",
+    "description": "USB-C, MicroUSB и Lightning в одном наборе — быстрая зарядка и синхронизация.",
+    "image": "https://via.placeholder.com/600x400?text=Cable+Pack"
+  },
+  {
+    "name": "Compact Lamp — Настольная лампа",
+    "price": "4 200",
+    "description": "LED лампа с регулировкой яркости и цветовой температуры.",
+    "image": "https://via.placeholder.com/600x400?text=Lamp"
+  }
+]
