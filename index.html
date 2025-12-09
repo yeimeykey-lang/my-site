@@ -3,113 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hackathon KZ — Магазин</title>
+  <title>HandMarket — Главная</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-row">
-      <div class="brand">Hackathon <span class="accent">KZ</span></div>
+      <div class="brand">HandMarket <span class="accent">KZ</span></div>
 
       <div class="search-wrap">
         <input id="searchInput" class="search-input" type="search" placeholder="Поиск: зимняя куртка, кофе..." />
       </div>
 
       <div class="controls">
-        <select id="countrySelect" class="country-select" aria-label="Выбор страны">
-          <option value="">Страна</option>
-          <option value="Россия">Россия</option>
-          <option value="Беларусь">Беларусь</option>
-          <option value="Казахстан">Казахстан</option>
-          <option value="Киргизия">Киргизия</option>
-          <option value="Армения">Армения</option>
-          <option value="Узбекистан">Узбекистан</option>
-        </select>
-        <button id="openAuthBtn" class="btn btn-outline">Вход / Регистрация</button>
+        <div id="userGreeting" class="user-greeting" aria-hidden="true"></div>
+        <a id="linkLogin" href="login.html" class="btn btn-outline">Вход</a>
+        <a id="linkRegister" href="register.html" class="btn">Регистрация</a>
+        <button id="logoutBtn" class="btn btn-ghost hidden">Выйти</button>
       </div>
     </div>
   </header>
 
-  <main class="container main-grid">
-    <!-- Левая панель: аутентификация + выбор страны + быстрые ссылки -->
-    <aside class="left-panel" id="leftPanel">
-      <div class="auth-card card" id="authCard">
-        <div class="tabs">
-          <button id="tabRegister" class="tab active">Регистрация</button>
-          <button id="tabLogin" class="tab">Вход</button>
-        </div>
-
-        <form id="formRegister" class="form">
-          <h3 class="form-title">Регистрация</h3>
-          <input id="fullName" type="text" placeholder="ФИО" required />
-          <input id="contactReg" type="text" placeholder="Телефон или Email" required />
-          <select id="countryReg" required>
-            <option value="">Выберите страну</option>
-            <option value="Россия">Россия</option>
-            <option value="Беларусь">Беларусь</option>
-            <option value="Казахстан">Казахстан</option>
-            <option value="Киргизия">Киргизия</option>
-            <option value="Армения">Армения</option>
-            <option value="Узбекистан">Узбекистан</option>
-          </select>
-          <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
-          <p class="muted">Уже есть аккаунт? <a href="#" id="toLogin">Войти</a></p>
-        </form>
-
-        <form id="formLogin" class="form hidden">
-          <h3 class="form-title">Вход</h3>
-          <input id="contactLogin" type="text" placeholder="Телефон или Email" required />
-          <button class="btn btn-primary" type="submit">Войти</button>
-          <p class="muted">Нет аккаунта? <a href="#" id="toRegister">Регистрация</a></p>
-        </form>
-
-        <div id="authMsg" class="auth-msg" aria-live="polite"></div>
+  <main class="container main-grid-single">
+    <section class="hero card">
+      <div class="hero-left">
+        <h1>Лучшие товары для рукоделия и быта</h1>
+        <p class="muted">HandMarket — демо-магазин для учебного проекта.</p>
+        <a href="#recommended" class="btn">Смотреть товары</a>
       </div>
-
-      <div class="country-card card">
-        <h4>Выбор страны</h4>
-        <div class="country-list">
-          <label><input type="radio" name="country_right" value="Россия"> Россия</label>
-          <label><input type="radio" name="country_right" value="Беларусь"> Беларусь</label>
-          <label><input type="radio" name="country_right" value="Казахстан"> Казахстан</label>
-          <label><input type="radio" name="country_right" value="Киргизия"> Киргизия</label>
-          <label><input type="radio" name="country_right" value="Армения"> Армения</label>
-          <label><input type="radio" name="country_right" value="Узбекистан"> Узбекистан</label>
-        </div>
+      <div class="hero-right">
+        <div class="big-banner">Скидки! — До 30%</div>
       </div>
-
-      <div class="quick-links card">
-        <h4>Быстро</h4>
-        <ul>
-          <li><a href="#recommendedSection">Рекомендуем</a></li>
-          <li><a href="#searchSection">Поиск</a></li>
-          <li><a href="#mayLikeSection">Похожие</a></li>
-        </ul>
-      </div>
-    </aside>
-
-    <!-- Правая: каталог -->
-    <section class="catalog" id="catalog">
-      <h2 id="recommendedSection" class="section-title">Рекомендуем</h2>
-      <div id="recommended" class="grid"></div>
-
-      <h2 id="searchSection" class="section-title">Результаты поиска</h2>
-      <div id="searchResults" class="grid"></div>
-
-      <h2 id="mayLikeSection" class="section-title">Вам может понравиться</h2>
-      <div id="mayLike" class="grid"></div>
     </section>
+
+    <h2 id="recommended" class="section-title">Рекомендуем</h2>
+    <div id="recommendedGrid" class="grid"></div>
+
+    <h2 id="searchResultsTitle" class="section-title hidden">Результаты поиска</h2>
+    <div id="searchResults" class="grid"></div>
+
+    <h2 id="mayLikeTitle" class="section-title">Вам может понравиться</h2>
+    <div id="mayLike" class="grid"></div>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <div>© Hackathon KZ — демо</div>
-      <div><button id="logoutBtn" class="btn btn-ghost hidden">Выйти</button></div>
+      <div>© HandMarket — учебный проект</div>
+      <div class="muted">Версия демо</div>
     </div>
   </footer>
 
-  <!-- Шаблон карточки -->
   <template id="cardTpl">
     <article class="product-card">
       <div class="media"><img alt="product" /></div>
@@ -127,4 +71,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
