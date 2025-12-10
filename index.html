@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HandMarket — Главная</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HandMarket — Онлайн магазин</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Fonts (чистый, современный) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-row">
-      <div class="brand">HandMarket <span class="accent">KZ</span></div>
 
-      <div class="search-wrap">
-        <input id="searchInput" class="search-input" type="search" placeholder="Поиск: зимняя куртка, кофе..." />
-      </div>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">Hand<span>Market</span></div>
 
-      <div class="controls">
-        <div id="userGreeting" class="user-greeting" aria-hidden="true"></div>
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="#" class="category-btn" data-category="electronics">Электроника</a>
+            <a href="#" class="category-btn" data-category="fashion">Одежда</a>
+            <a href="#" class="category-btn" data-category="home">Дом</a>
+            <a href="cart.html">Корзина</a>
+            <a href="login.html">Вход</a>
+        </nav>
+    </header>
 
-        <!-- cart button now links to cart.html -->
-        <a id="cartLink" href="cart.html" class="btn btn-cart" aria-label="Корзина">
-          🛒 <span id="cartCount" class="cart-count hidden">0</span>
-        </a>
 
-        <a id="linkLogin" href="login.html" class="btn btn-outline">Вход</a>
-        <a id="linkRegister" href="register.html" class="btn">Регистрация</a>
-        <button id="logoutBtn" class="btn btn-ghost hidden">Выйти</button>
-      </div>
-    </div>
-  </header>
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Добро пожаловать в HandMarket</h1>
+            <p>Тысячи товаров — быстро, удобно, выгодно.</p>
 
-  <main class="container main-grid-single">
-    <section class="hero card">
-      <div class="hero-left">
-        <h1>Лучшие товары для рукоделия и быта</h1>
-        <p class="muted">HandMarket — учебный демо-магазин. Красиво, просто, понятно.</p>
-        <a href="#recommended" class="btn btn-cta">Смотреть товары</a>
-      </div>
-      <div class="hero-right">
-        <div class="big-banner">
-          <div class="badge">-30%</div>
-          <div class="banner-text">Сезонные скидки на наборы</div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Поиск товаров..." />
+                <button id="searchBtn">Поиск</button>
+            </div>
         </div>
-      </div>
+
+        <div class="hero-img"></div>
     </section>
 
-    <h2 id="recommended" class="section-title">Рекомендуем</h2>
-    <div id="recommendedGrid" class="grid"></div>
 
-    <h2 id="searchResultsTitle" class="section-title hidden">Результаты поиска</h2>
-    <div id="searchResults" class="grid"></div>
+    <!-- CATEGORY FILTER BAR -->
+    <section class="categories-bar">
+        <button class="filter-btn" data-category="all">Все товары</button>
+        <button class="filter-btn" data-category="electronics">Электроника</button>
+        <button class="filter-btn" data-category="fashion">Одежда</button>
+        <button class="filter-btn" data-category="home">Дом</button>
+        <button class="filter-btn" data-category="other">Другое</button>
+    </section>
 
-    <h2 id="mayLikeTitle" class="section-title">Вам может понравиться</h2>
-    <div id="mayLike" class="grid"></div>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <div>© HandMarket — учебный проект</div>
-      <div class="muted">Версия демо</div>
-    </div>
-  </footer>
-
-  <template id="cardTpl">
-    <article class="product-card">
-      <div class="media">
-        <img alt="product">
-        <div class="card-badge hidden"></div>
-      </div>
-      <div class="body">
-        <h3 class="title"></h3>
-        <p class="desc"></p>
-        <div class="row">
-          <div class="price"></div>
-          <div class="actions">
-            <button class="btn btn-sm btn-details">Подробнее</button>
-            <button class="btn btn-sm btn-add">В корзину</button>
-          </div>
+    <!-- PRODUCT GRID -->
+    <section class="products-section">
+        <h2>Каталог товаров</h2>
+        <div id="productsContainer" class="products-grid">
+            <!-- Товары загружаются из script.js -->
         </div>
-      </div>
-    </article>
-  </template>
+    </section>
 
-  <script src="script.js"></script>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-block">
+            <h3>HandMarket</h3>
+            <p>Онлайн-магазин с быстрой доставкой.</p>
+        </div>
+
+        <div class="footer-block">
+            <h4>Навигация</h4>
+            <a href="index.html">Главная</a>
+            <a href="cart.html">Корзина</a>
+            <a href="login.html">Вход</a>
+            <a href="register.html">Регистрация</a>
+        </div>
+
+        <div class="footer-block">
+            <h4>Контакты</h4>
+            <p>Email: support@handmarket.com</p>
+            <p>Telegram: @HandMarket</p>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 HandMarket. Все права защищены.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
