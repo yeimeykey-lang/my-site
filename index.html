@@ -19,9 +19,10 @@
       <div class="controls">
         <div id="userGreeting" class="user-greeting" aria-hidden="true"></div>
 
-        <button id="cartBtn" class="btn btn-cart" aria-label="Открыть корзину">
+        <!-- cart button now links to cart.html -->
+        <a id="cartLink" href="cart.html" class="btn btn-cart" aria-label="Корзина">
           🛒 <span id="cartCount" class="cart-count hidden">0</span>
-        </button>
+        </a>
 
         <a id="linkLogin" href="login.html" class="btn btn-outline">Вход</a>
         <a id="linkRegister" href="register.html" class="btn">Регистрация</a>
@@ -34,13 +35,13 @@
     <section class="hero card">
       <div class="hero-left">
         <h1>Лучшие товары для рукоделия и быта</h1>
-        <p class="muted">HandMarket — демо-магазин для учебного проекта. Качественные товары, понятный интерфейс.</p>
+        <p class="muted">HandMarket — учебный демо-магазин. Красиво, просто, понятно.</p>
         <a href="#recommended" class="btn btn-cta">Смотреть товары</a>
       </div>
       <div class="hero-right">
         <div class="big-banner">
           <div class="badge">-30%</div>
-          <div class="banner-text">Сезонные скидки на наборы инструментов</div>
+          <div class="banner-text">Сезонные скидки на наборы</div>
         </div>
       </div>
     </section>
@@ -62,7 +63,6 @@
     </div>
   </footer>
 
-  <!-- product card template -->
   <template id="cardTpl">
     <article class="product-card">
       <div class="media">
@@ -82,41 +82,6 @@
       </div>
     </article>
   </template>
-
-  <!-- product modal -->
-  <div id="productModal" class="modal hidden" role="dialog" aria-hidden="true">
-    <div class="modal-panel card">
-      <button id="modalClose" class="modal-close" aria-label="Закрыть">✕</button>
-      <div class="modal-grid">
-        <div class="modal-image"><img id="modalImg" src="" alt=""></div>
-        <div class="modal-info">
-          <h3 id="modalTitle"></h3>
-          <p id="modalDesc" class="muted"></p>
-          <div class="modal-price" id="modalPrice"></div>
-          <div class="modal-actions">
-            <button id="modalAdd" class="btn">Добавить в корзину</button>
-            <button id="modalBuy" class="btn btn-primary">Купить сейчас</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- cart drawer -->
-  <aside id="cartDrawer" class="cart-drawer hidden" aria-hidden="true">
-    <div class="cart-header">
-      <h3>Корзина</h3>
-      <button id="closeCart" class="modal-close">✕</button>
-    </div>
-    <div id="cartList" class="cart-list"></div>
-    <div class="cart-summary">
-      <div>Итого: <span id="cartTotal">0</span> ₽</div>
-      <div class="row" style="margin-top:10px">
-        <button id="checkoutBtn" class="btn btn-primary">Оформить</button>
-        <button id="clearCartBtn" class="btn btn-outline">Очистить</button>
-      </div>
-    </div>
-  </aside>
 
   <script src="script.js"></script>
 </body>
