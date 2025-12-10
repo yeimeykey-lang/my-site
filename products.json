@@ -1,35 +1,26 @@
 [
   {
-    "id": 1,
-    "title": "HandTool — Многофункциональный набор",
-    "price": 12990,
+    "name": "HandTool — Многофункциональный набор",
+    "price": "12 990",
     "description": "Набор инструментов для ремонта и мелких задач — удобно хранить и носить.",
-    "category": "tools",
-    "image": "https://via.placeholder.com/600x400?text=HandTool+Set",
-    "badge": "-30%"
+    "image": "https://via.placeholder.com/600x400?text=HandTool+Set"
   },
   {
-    "id": 2,
-    "title": "EcoMug — Термокружка 450ml",
-    "price": 3490,
+    "name": "EcoMug — Термокружка 450ml",
+    "price": "3 490",
     "description": "Держит тепло до 6 часов, герметичная крышка, стильный дизайн.",
-    "category": "kitchen",
     "image": "https://via.placeholder.com/600x400?text=EcoMug"
   },
   {
-    "id": 3,
-    "title": "CablePack — Набор кабелей",
-    "price": 1199,
-    "description": "USB-C, MicroUSB и Lightning — быстрая зарядка и синхронизация.",
-    "category": "electronics",
+    "name": "CablePack — Набор кабелей",
+    "price": "1 199",
+    "description": "USB-C, MicroUSB и Lightning в одном наборе — быстрая зарядка и синхронизация.",
     "image": "https://via.placeholder.com/600x400?text=Cable+Pack"
   },
   {
-    "id": 4,
-    "title": "Compact Lamp — Настольная лампа",
-    "price": 4200,
+    "name": "Compact Lamp — Настольная лампа",
+    "price": "4 200",
     "description": "LED лампа с регулировкой яркости и цветовой температуры.",
-    "category": "home",
     "image": "https://via.placeholder.com/600x400?text=Lamp"
   }
 ]
