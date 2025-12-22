@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HandMarket — Главная</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>HandMarket — Интернет-магазин</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,71 +13,164 @@
       <div class="brand">HandMarket <span class="accent">KZ</span></div>
 
       <div class="search-wrap">
-        <input id="searchInput" class="search-input" type="search" placeholder="Поиск: зимняя куртка, кофе..." />
+        <input id="searchInput" class="search-input" type="search" placeholder="Поиск: кроссовки, кофе..." />
       </div>
 
       <div class="controls">
-        <div id="userGreeting" class="user-greeting" aria-hidden="true"></div>
-
-        <!-- cart button now links to cart.html -->
+        <div id="userGreeting" class="user-greeting"></div>
+        
         <a id="cartLink" href="cart.html" class="btn btn-cart" aria-label="Корзина">
           🛒 <span id="cartCount" class="cart-count hidden">0</span>
         </a>
 
-        <a id="linkLogin" href="login.html" class="btn btn-outline">Вход</a>
-        <a id="linkRegister" href="register.html" class="btn">Регистрация</a>
-        <button id="logoutBtn" class="btn btn-ghost hidden">Выйти</button>
+        <a id="linkLogin" href="login.html" class="btn btn-outline">Войти</a>
+        <a id="linkRegister" href="register.html" class="btn btn-ghost hidden">Рег-ция</a>
+        <button id="logoutBtn" class="btn btn-outline hidden">Выйти</button>
       </div>
     </div>
   </header>
 
   <main class="container main-grid-single">
-    <section class="hero card">
-      <div class="hero-left">
-        <h1>Лучшие товары для рукоделия и быта</h1>
-        <p class="muted">HandMarket — учебный демо-магазин. Красиво, просто, понятно.</p>
-        <a href="#recommended" class="btn btn-cta">Смотреть товары</a>
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Скидки до 50% <br>на электронику</h1>
+        <p>Успей купить лучшие гаджеты по сниженным ценам этой недели.</p>
+        <button class="btn btn-cta" onclick="document.getElementById('recommended').scrollIntoView({behavior:'smooth'})">Перейти к покупкам</button>
       </div>
-      <div class="hero-right">
-        <div class="big-banner">
-          <div class="badge">-30%</div>
-          <div class="banner-text">Сезонные скидки на наборы</div>
+      <div class="slider-container">
+        <div class="slider-wrapper" id="heroSlider">
+          <div class="slide active" style="background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);">
+            <div class="slide-content">
+              <div class="badge">NEW</div>
+              <h2>Новая коллекция <br>Весна 2025</h2>
+              <button class="btn btn-primary" onclick="window.scrollTo(0, 800)">Смотреть</button>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3081/3081648.png" class="slide-img" alt="">
+          </div>
+          <div class="slide" style="background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);">
+            <div class="slide-content">
+              <div class="badge" style="background:#10893E">-30%</div>
+              <h2>Эко-товары <br>для дома</h2>
+              <button class="btn btn-primary" onclick="window.scrollTo(0, 800)">Купить</button>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/4127/4127281.png" class="slide-img" alt="">
+          </div>
+          <div class="slide" style="background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);">
+            <div class="slide-content">
+              <div class="badge" style="background:#6366f1">ХИТ</div>
+              <h2>Гаджеты <br>будущего</h2>
+              <button class="btn btn-primary" onclick="window.scrollTo(0, 800)">Выбрать</button>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3474/3474360.png" class="slide-img" alt="">
+          </div>
         </div>
+        <div class="slider-dots" id="sliderDots"></div>
       </div>
     </section>
 
-    <h2 id="recommended" class="section-title">Рекомендуем</h2>
+    <div class="categories" id="categoryFilters">
+      <!-- Кнопки динамически наполняются из JS -->
+      <button class="cat-btn active" data-cat="all">Все</button>
+    </div>
+
+    <div id="searchResultsSection" class="hidden">
+      <h2 class="section-title">🔍 Результаты поиска</h2>
+      <div id="searchResults" class="grid"></div>
+    </div>
+
+    <h2 id="recommended" class="section-title">🔥 Рекомендуем вам</h2>
     <div id="recommendedGrid" class="grid"></div>
 
-    <h2 id="searchResultsTitle" class="section-title hidden">Результаты поиска</h2>
-    <div id="searchResults" class="grid"></div>
-
-    <h2 id="mayLikeTitle" class="section-title">Вам может понравиться</h2>
+    <h2 class="section-title">Вам может понравиться</h2>
     <div id="mayLike" class="grid"></div>
   </main>
 
+  <section id="recentSection" class="hidden" style="margin-top: 60px;">
+    <h2 class="section-title">👀 Вы недавно смотрели</h2>
+    <div id="recentGrid" class="grid"></div>
+  </section>
+
   <footer class="site-footer">
-    <div class="container footer-row">
-      <div>© HandMarket — учебный проект</div>
-      <div class="muted">Версия демо</div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand" style="color:var(--text-main); margin-bottom:15px;">HandMarket <span class="accent">KZ</span></div>
+          <p style="color:var(--text-muted); line-height:1.6; max-width:300px;">
+            Ваш надежный интернет-магазин с доставкой по всему Казахстану. Качество, скорость и забота о каждом клиенте.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Покупателям</h4>
+          <ul class="footer-links">
+            <li><a href="#">Как сделать заказ</a></li>
+            <li><a href="#">Способы оплаты</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Возврат товара</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Компания</h4>
+          <ul class="footer-links">
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Партнерам</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <ul class="footer-links">
+            <li><a href="#">+7 (777) 123-45-67</a></li>
+            <li><a href="#">support@handmarket.kz</a></li>
+            <li style="margin-top:15px;">г. Алматы, ул. Абая 10</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>© 2025 HandMarket KZ. Все права защищены.</div>
+        <div class="pay-icons">
+          <div class="pay-icon" style="background:url('https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png') center/contain no-repeat;"></div>
+          <div class="pay-icon" style="background:url('https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg') center/contain no-repeat;"></div>
+          <div class="pay-icon" style="background:url('https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg') center/contain no-repeat;"></div>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <div id="productModal" class="modal-overlay">
+    <div class="modal-window">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="modal-left">
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div class="modal-right">
+        <div id="modalCat" class="modal-category">Категория</div>
+        <h3 id="modalTitle" class="modal-title">Название товара</h3>
+        <p id="modalDesc" class="modal-desc">Описание...</p>
+        <div class="modal-price-row">
+          <div id="modalPrice" class="modal-price">0 ₽</div>
+          <button id="modalBuyBtn" class="btn btn-primary btn-cta">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <template id="cardTpl">
     <article class="product-card">
       <div class="media">
-        <img alt="product">
+        <img class="card-img" alt="product">
         <div class="card-badge hidden"></div>
       </div>
-      <div class="body">
-        <h3 class="title"></h3>
-        <p class="desc"></p>
-        <div class="row">
-          <div class="price"></div>
-          <div class="actions">
-            <button class="btn btn-sm btn-details">Подробнее</button>
-            <button class="btn btn-sm btn-add">В корзину</button>
-          </div>
+      <div class="card-body">
+        <div class="card-price">
+            <span class="price-actual"></span>
+            <span class="price-old hidden"></span>
+        </div>
+        <h3 class="title card-title"></h3>
+        <div class="card-actions">
+          <button class="btn btn-primary w-full btn-add">В корзину</button>
+          <button class="btn btn-outline btn-details" style="border-color:#e2e8f0; color:var(--text-muted)">ℹ️</button>
         </div>
       </div>
     </article>
