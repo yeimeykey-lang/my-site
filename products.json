@@ -1,26 +1,130 @@
 [
   {
-    "name": "HandTool — Многофункциональный набор",
-    "price": "12 990",
-    "description": "Набор инструментов для ремонта и мелких задач — удобно хранить и носить.",
-    "image": "https://via.placeholder.com/600x400?text=HandTool+Set"
+    "id": 1,
+    "name": "Зимняя куртка NorthPeak",
+    "category": "Одежда",
+    "price": "18 990",
+    "oldPrice": "24 000",
+    "description": "Теплая непромокаемая куртка для суровых зим. Мембрана 5000/5000, утеплитель синтепон.",
+    "image": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=600&q=80",
+    "badge": "-20%"
   },
   {
-    "name": "EcoMug — Термокружка 450ml",
+    "id": 2,
+    "name": "Кофемашина Barista Pro",
+    "category": "Техника",
+    "price": "45 000",
+    "description": "Автоматическая кофемашина. Эспрессо, капучино, латте одним нажатием.",
+    "image": "https://images.unsplash.com/photo-1520978294860-c2a877c0dd74?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Беспроводные наушники SoundFlow",
+    "category": "Электроника",
     "price": "3 490",
-    "description": "Держит тепло до 6 часов, герметичная крышка, стильный дизайн.",
-    "image": "https://via.placeholder.com/600x400?text=EcoMug"
+    "oldPrice": "5 000",
+    "description": "Чистый звук, глубокий бас и 24 часа работы от кейса. Шумоподавление ANC.",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+    "badge": "ХИТ"
   },
   {
-    "name": "CablePack — Набор кабелей",
-    "price": "1 199",
-    "description": "USB-C, MicroUSB и Lightning в одном наборе — быстрая зарядка и синхронизация.",
-    "image": "https://via.placeholder.com/600x400?text=Cable+Pack"
+    "id": 4,
+    "name": "Кроссовки Urban Run",
+    "category": "Обувь",
+    "price": "6 200",
+    "description": "Легкие дышащие кроссовки для бега и прогулок по городу. Амортизирующая подошва.",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
   },
   {
-    "name": "Compact Lamp — Настольная лампа",
-    "price": "4 200",
-    "description": "LED лампа с регулировкой яркости и цветовой температуры.",
-    "image": "https://via.placeholder.com/600x400?text=Lamp"
+    "id": 5,
+    "name": "Набор инструментов Master 108",
+    "category": "Ремонт",
+    "price": "12 990",
+    "description": "Профессиональный набор инструментов в кейсе. 108 предметов из хром-ванадиевой стали.",
+    "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80",
+    "badge": ""
+  },
+  {
+    "id": 6,
+    "name": "Фитнес-браслет Smart Life 7",
+    "category": "Электроника",
+    "price": "2 100",
+    "description": "Считает шаги, пульс, уровень кислорода. Водонепроницаемый корпус.",
+    "image": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 7,
+    "name": "Рюкзак городской Travel",
+    "category": "Аксессуары",
+    "price": "2 800",
+    "oldPrice": "3 500",
+    "description": "Вместительный рюкзак с отделением для ноутбука 15.6 дюймов. USB-порт для зарядки.",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80",
+    "badge": "SALE"
+  },
+  {
+    "id": 8,
+    "name": "Блендер Smoothie Maker",
+    "category": "Техника",
+    "price": "1 990",
+    "description": "Компактный стационарный блендер для смузи и коктейлей. Бутылка в комплекте.",
+    "image": "https://images.unsplash.com/photo-1570222094114-28a9d8896aca?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 9,
+    "name": "Лампа настольная LED",
+    "category": "Дом",
+    "price": "1 500",
+    "description": "Сенсорное управление, 3 режима света, регулировка яркости.",
+    "image": "https://images.unsplash.com/photo-1534073828943-f801091a7d58?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 10,
+    "name": "Чайник электрический Glass",
+    "category": "Техника",
+    "price": "1 200",
+    "description": "Стеклянный корпус, подсветка при кипячении, защита от перегрева.",
+    "image": "https://images.unsplash.com/photo-1520106657908-11a57c0936e7?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 11,
+    "name": "Набор ножей Chef Steel",
+    "category": "Кухня",
+    "price": "3 990",
+    "description": "5 ножей из высокоуглеродистой стали + подставка. Лазерная заточка.",
+    "image": "https://images.unsplash.com/photo-1593618998160-e34014e67544?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 12,
+    "name": "Умная колонка Mini",
+    "category": "Электроника",
+    "price": "4 990",
+    "description": "Голосовой помощник, управление умным домом, качественный звук.",
+    "image": "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 13,
+    "name": "Ручная керамическая кружка",
+    "category": "Ручные изделия",
+    "price": "2 300",
+    "description": "Уникальная кружка, сделана вручную местным мастером. Можно мыть в посудомойке.",
+    "image": "https://images.unsplash.com/photo-1528803570568-3d3b2a3b2f1b?auto=format&fit=crop&w=600&q=80",
+    "badge": "Handmade"
+  },
+  {
+    "id": 14,
+    "name": "Вязаный шарф ручной работы",
+    "category": "Ручные изделия",
+    "price": "1 450",
+    "description": "Теплый шарф из натуральной пряжи, доступен в нескольких цветах.",
+    "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 15,
+    "name": "Деревянная подставка для ноутбука",
+    "category": "Ручные изделия",
+    "price": "5 200",
+    "description": "Эргономичная подставка, выполнена из массива дерева, ручная шлифовка и покрытие.",
+    "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
   }
 ]
