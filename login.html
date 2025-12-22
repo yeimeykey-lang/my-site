@@ -4,35 +4,34 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Вход — HandMarket</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="auth-page">
+
   <header class="site-header small">
-    <div class="container header-row">
-      <div class="brand">HandMarket <span class="accent">KZ</span></div>
-      <div class="controls">
-        <a href="index.html" class="btn btn-outline">Главная</a>
-      </div>
+    <div class="container header-row" style="justify-content: center;">
+      <a href="index.html" style="text-decoration:none; color:white;">
+        <div class="brand">HandMarket <span class="accent">KZ</span></div>
+      </a>
     </div>
   </header>
 
   <main class="container auth-wrap">
-    <div class="auth-card card">
-      <h2>Вход</h2>
+    <div class="auth-card">
+      <h2>С возвращением!</h2>
+      
+      <form id="loginForm">
+        <label class="form-label">Телефон или Email</label>
+        <input id="loginContact" class="form-input" type="text" placeholder="Введите ваш логин" required>
 
-      <form id="loginForm" class="form">
-        <label class="field">
-          <div class="label-text">Телефон или Email</div>
-          <input id="loginContact" type="text" placeholder="+7 777 777 77 77 / email@example.com" required>
-        </label>
+        <button class="btn btn-primary w-full btn-cta" type="submit">Войти</button>
 
-        <div class="row" style="gap:12px">
-          <button class="btn btn-primary" type="submit">Войти</button>
-          <a class="btn btn-outline" href="register.html">Регистрация</a>
+        <div id="loginMsg" style="color:var(--danger); margin-top:10px; font-size:14px;"></div>
+
+        <div class="auth-footer">
+          Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
         </div>
-
-        <div id="loginMsg" class="auth-msg" aria-live="polite"></div>
       </form>
     </div>
   </main>
@@ -42,16 +41,12 @@
     document.getElementById('loginForm').addEventListener('submit', function (e) {
       e.preventDefault();
       const contact = document.getElementById('loginContact').value.trim();
-      const msg = document.getElementById('loginMsg');
-
-      if (!contact) { msg.textContent = 'Введите контакт.'; return; }
-
-      const stored = JSON.parse(localStorage.getItem('hm_user') || 'null');
-      if (stored && stored.contact === contact) {
-        // success
-        location.href = 'index.html';
-      } else {
-        msg.textContent = 'Пользователь не найден. Зарегистрируйтесь.';
+      
+      // Имитация входа (в реальном проекте тут проверка пароля)
+      if (contact) {
+         // Если пользователь забыл зарегистрироваться, создадим временного
+         localStorage.setItem('hm_user', JSON.stringify({ name: "Пользователь", contact }));
+         location.href = 'index.html';
       }
     });
   </script>
