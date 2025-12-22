@@ -4,95 +4,63 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Регистрация — HandMarket</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="auth-page">
+  
   <header class="site-header small">
-    <div class="container header-row">
-      <div class="brand">HandMarket <span class="accent">KZ</span></div>
-      <div class="controls">
-        <a href="index.html" class="btn btn-outline">Главная</a>
-      </div>
+    <div class="container header-row" style="justify-content: center;">
+      <a href="index.html" style="text-decoration:none; color:white;">
+        <div class="brand">HandMarket <span class="accent">KZ</span></div>
+      </a>
     </div>
   </header>
 
   <main class="container auth-wrap">
-    <div class="auth-card card">
-      <h2>Регистрация</h2>
+    <div class="auth-card">
+      <h2>Создать аккаунт</h2>
+      
+      <form id="registerForm">
+        <label class="form-label">Ваше имя</label>
+        <input id="regName" class="form-input" type="text" placeholder="Иван Иванов" required>
 
-      <form id="registerForm" class="form">
-        <label class="field">
-          <div class="label-text">ФИО</div>
-          <input id="regName" type="text" placeholder="Иван Иванов" required>
-        </label>
+        <label class="form-label">Телефон или Email</label>
+        <input id="regContact" class="form-input" type="text" placeholder="+7 700 000 00 00" required>
 
-        <label class="field">
-          <div class="label-text">Телефон или Email</div>
-          <input id="regContact" type="text" placeholder="+7 777 777 77 77 / email@example.com" required>
-        </label>
+        <label class="form-label">Страна</label>
+        <select id="regCountry" class="country-select" required>
+          <option value="Казахстан">Казахстан 🇰🇿</option>
+          <option value="Россия">Россия 🇷🇺</option>
+          <option value="Киргизия">Киргизия 🇰🇬</option>
+          <option value="Узбекистан">Узбекистан 🇺🇿</option>
+        </select>
 
-        <label class="field">
-          <div class="label-text">Пол</div>
-          <div class="gender-row">
-            <label><input type="radio" name="gender" value="Мужской" checked> Мужской</label>
-            <label><input type="radio" name="gender" value="Женский"> Женский</label>
-          </div>
-        </label>
+        <button class="btn btn-primary w-full btn-cta" type="submit">Зарегистрироваться</button>
+        
+        <div id="regMsg" style="color:var(--danger); margin-top:10px; font-size:14px;"></div>
 
-        <label class="field">
-          <div class="label-text">Страна</div>
-          <select id="regCountry" class="country-select" required>
-            <option value="">Выберите страну</option>
-            <option value="Россия">Россия</option>
-            <option value="Казахстан">Казахстан</option>
-            <option value="Киргизия">Киргизия</option>
-            <option value="Беларусь">Беларусь</option>
-            <option value="Армения">Армения</option>
-            <option value="Узбекистан">Узбекистан</option>
-          </select>
-        </label>
-
-        <div class="row" style="gap:12px">
-          <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
-          <a class="btn btn-outline" href="login.html">Войти</a>
+        <div class="auth-footer">
+          Уже есть аккаунт? <a href="login.html">Войти</a>
         </div>
-
-        <div id="regMsg" class="auth-msg" aria-live="polite"></div>
       </form>
     </div>
   </main>
 
   <script src="script.js"></script>
   <script>
-    // Local handler: registration specific logic (script.js also covers cross-page behaviors)
     document.getElementById('registerForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      const name = document.getElementById('regName').value.trim();
-      const contact = document.getElementById('regContact').value.trim();
-      const country = document.getElementById('regCountry').value;
-      const genderEl = document.querySelector('input[name="gender"]:checked');
-      const gender = genderEl ? genderEl.value : '';
-
-      const msg = document.getElementById('regMsg');
-      if (!name || !contact || !country) {
-        msg.textContent = 'Заполните все поля.';
-        return;
+      const name = document.getElementById('regName').value;
+      const contact = document.getElementById('regContact').value;
+      
+      if(name && contact) {
+        // Сохраняем пользователя
+        const user = { name, contact };
+        localStorage.setItem('hm_user', JSON.stringify(user));
+        // Переход на главную
+        location.href = 'index.html';
       }
-      // simple contact validation (email or phone)
-      const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact);
-      const isPhone = /^(\+?\d[\d\s-]{5,}\d)$/.test(contact.replace(/\s+/g,''));
-      if (!isEmail && !isPhone) {
-        msg.textContent = 'Укажите корректный телефон или email.';
-        return;
-      }
-
-      const user = { name, contact, country, gender, created: Date.now() };
-      localStorage.setItem('hm_user', JSON.stringify(user));
-      // keep selected country also for convenience
-      localStorage.setItem('hm_selected_country', country);
-      // redirect to main
-      location.href = 'index.html';
     });
   </script>
 </body>
